@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11-feb-2016, 20:13:02
+    Author     : sergio
+*/
+
+    root { 
+    display: block;
+    }
+    #Pane {
+    -fx-background-color: #61a2b1;
+    }
+
+    #titol{
+       -fx-font-size: 24px;
+       -fx-font-weight: bold;
+       -fx-font-family: "Arial Narrow";
+       -fx-text-fill: white;
+       -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+
+    }
+    #missatge {
+      -fx-fill: RED;
+      -fx-font-weight: bold;
+      -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );  
+    }
+
+    .button {
+        -fx-text-fill: white;
+        -fx-font-family: "Arial Narrow";
+        -fx-font-weight: bold;
+        -fx-background-color: linear-gradient(#61a2b1, #2A5058);
+        -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+        -fx-graphic: url("/home/sergio/NetBeansProjects/DoraFX/src/dorafx/imagenes/play.png");
+    }
+    .button:hover {
+        -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+    }
+
