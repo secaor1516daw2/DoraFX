@@ -9,8 +9,10 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.image.*?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="750.0" text="Dora" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-    <stylesheets>
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity"
+            minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0"
+            prefWidth="750.0" text="Dora" xmlns="http://javafx.com/javafx/8.0.65"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="dorafx.FXMLDocumentController">    <stylesheets>
 	<!-- @ indica que esta  al mateix directori que fxml -->
 	<URL value="@style.css" />
     </stylesheets>
@@ -20,7 +22,7 @@
             <fx:define>
                 <Image fx:id="btnImage" url="imagenes/play.png" />
             </fx:define>
-            <Button layoutX="605.0" layoutY="140.0" mnemonicParsing="false" text="Iniciar">
+            <Button layoutX="605.0" layoutY="140.0" mnemonicParsing="false" onAction="#init"  text="Iniciar">
                 <font>
                   <Font name="SansSerif Regular" size="13.0" />
                 </font>
@@ -31,7 +33,7 @@
             <fx:define>
                 <Image fx:id="btnImage2" url="imagenes/engranaje.png" />
             </fx:define>
-            <Button layoutX="595.0" layoutY="278.0" mnemonicParsing="false" text="Procesar">
+            <Button layoutX="595.0" layoutY="278.0" mnemonicParsing="false" onAction="#push" text="Procesar">
                 <font>
                   <Font name="SansSerif Regular" size="13.0" />
                 </font>
@@ -39,7 +41,7 @@
                     <ImageView image="$btnImage2" />
                 </graphic>                
             </Button> 
-            <Canvas height="337.0" layoutX="54.0" layoutY="74.0" width="497.0" />
+            <Canvas id="canvas" fx:id="canvas" height="337.0" layoutX="54.0" layoutY="74.0" width="497.0" />
             <Label id="titol" layoutX="67.0" layoutY="33.0" prefHeight="30.0" prefWidth="408.0" text="Robot de Exploración DoraFX" />
          </children>
     </AnchorPane>
