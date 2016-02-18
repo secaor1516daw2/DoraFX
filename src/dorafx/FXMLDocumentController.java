@@ -5,12 +5,18 @@
  */
 package dorafx;
 
+import java.awt.Color;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.text.Font;
+import javafx.scene.*;
+import javafx.scene.paint.*;
+import javafx.scene.canvas.*;
 
 /**
  *
@@ -19,17 +25,26 @@ import javafx.scene.control.Label;
 public class FXMLDocumentController implements Initializable {
     
     @FXML
-    private Label label;
+    private Canvas canvas;
     
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private void init(ActionEvent event) {
+        btc.init();
+    }
+   
+    @FXML
+    private void push(ActionEvent event) {
+        btc.push();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        final GraphicsContext gc = canvas.getGraphicsContext2D();
+        gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
+            
+        gc.setFill(Paint.valueOf("FFFFFF"));
+        gc.setStroke(Paint.valueOf("000000"));
+        gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
     }    
     
 }
