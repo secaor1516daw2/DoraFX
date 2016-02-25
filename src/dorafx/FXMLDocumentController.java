@@ -29,22 +29,39 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void init(ActionEvent event) {
-        btc.init();
+        //btc.init();
     }
    
     @FXML
     private void push(ActionEvent event) {
-        btc.push();
+        //btc.push();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         final GraphicsContext gc = canvas.getGraphicsContext2D();
         gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
-            
-        gc.setFill(Paint.valueOf("FFFFFF"));
+        Double ancho = canvas.getWidth()/3;
+        Double altura = canvas.getHeight()/3;
+        String rojo = "FF0000";
+        String verde = "7CFC00";
+        int xMax = 3;
+        int yMax = 3;
+        gc.setFill(Paint.valueOf("000000"));
         gc.setStroke(Paint.valueOf("000000"));
         gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
+        for (int i=0; i<=xMax;i++){
+            for (int j=0; j<=yMax;j++){
+                if(i==1 && j==2){
+                    gc.setFill(Paint.valueOf(verde));
+                }else{
+                gc.setFill(Paint.valueOf(rojo));
+                 }
+                gc.fillRect(i*ancho,j*altura, ancho, altura);
+               
+            }
+        }
+
     }    
     
 }
